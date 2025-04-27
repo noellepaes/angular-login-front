@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+
+.input-field {
+  width: $input-width;
+  height: $input-height;
+  margin-bottom: 53px;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
