@@ -1,0 +1,32 @@
+@import '../../../styles/variables.scss';
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    width: $input-width;
+    height: $input-height;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-bottom: 1px solid white;
+    padding-left: 15px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: white;
+      opacity: 0.7;
+      font-size: 16px;
+    }
+  }
+}

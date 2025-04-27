@@ -1,12 +1,17 @@
 <section class="background-section">
   <div class="overlay-blur"></div>
+
   <section class="card-section">
     <div class="login-card">
       <h2>{{ title }}</h2>
+
       <ng-content></ng-content>
-      <button class="primary-button">{{ primaryButtonText }}</button>
+
+      <button class="primary-button" type="submit">{{ primaryButtonText }}</button>
+
       <div class="register-link">
-        <span>Não tem conta?</span> <a routerLink="/register">Registre-se aqui</a>
+        <span>Não tem conta?</span>
+        <a routerLink="/register">Registre-se aqui</a>
       </div>
     </div>
   </section>

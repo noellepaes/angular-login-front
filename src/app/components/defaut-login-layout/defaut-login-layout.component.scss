@@ -4,7 +4,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('../../../assets/backgroung.jpg'); // Corrigi o nome do arquivo: 'backgroung' -> 'background'
+  background-image: url('../../../assets/backgroung.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -18,7 +18,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // REMOVE o blur, deixa só o leve overlay:
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -62,7 +61,7 @@ input {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: black; // Aqui está o texto preto que você pediu!
+  color: black;
   font-weight: bold;
   font-size: 18px;
 }
