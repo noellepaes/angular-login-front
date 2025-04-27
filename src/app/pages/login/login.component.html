@@ -1,0 +1,19 @@
+<app-defaut-login-layout
+  [title]="'Bem-vinda de volta!'"
+  [primaryButtonText]="'Login'">
+
+  <form [formGroup]="formLogin">
+    <app-primary-input
+      type="email"
+      formControlName="email"
+      placeholder="Usuário"
+      class="input-field" />
+
+    <app-primary-input
+      type="password"
+      formControlName="password"
+      placeholder="Senha"
+      class="input-field" />
+  </form>
+
+</app-defaut-login-layout>
