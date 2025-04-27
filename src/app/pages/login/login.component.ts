@@ -30,4 +30,8 @@ export class LoginComponent {
       console.log(this.formLogin.value);
     }
   }
+
+  submit() {
+    console.log(this.formLogin.value);
+  }
 }
