@@ -15,6 +15,8 @@ import { Router } from '@angular/router';
 export class DefautLoginLayoutComponent {
   @Input() title: string = '';
   @Input() primaryButtonText: string = '';
+  @Input() desablePrimaryBtn: boolean = true;
+
   @Output("submit") onSubmit = new EventEmitter();
   @Output("navigate") onNavigate = new EventEmitter();
 
@@ -28,5 +30,5 @@ export class DefautLoginLayoutComponent {
     this.onNavigate.emit();
   }
 
-  
+
 }

@@ -7,7 +7,14 @@
 
       <ng-content></ng-content>
 
-      <button class="primary-button" type="submit" (click)="submit()">{{ primaryButtonText }}</button>
+      <button
+        class="primary-button"
+        type="submit"
+        (click)="submit()"
+        [disabled]="desablePrimaryBtn"
+      >
+        {{ primaryButtonText }}
+      </button>
 
       <div class="register-link">
         <span>Não tem conta?</span>

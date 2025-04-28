@@ -1,6 +1,6 @@
 import { LoginService } from './../../service/login.service';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DefautLoginLayoutComponent } from '../../components/defaut-login-layout/defaut-login-layout.component';
 import { CommonModule } from '@angular/common';
 import { PrimaryInputComponent } from "../../components/primary-input/primary-input.component";
@@ -34,22 +34,16 @@ export class LoginComponent {
 
 
   ){
-    this.formLogin = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
-    });
-  }
-
-  onSubmit() {
-    if (this.formLogin.valid) {
-      console.log(this.formLogin.value);
-    }
+    this.formLogin = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    })
   }
 
   submit() {
    this.LoginService.login(this.formLogin.value.email, this.formLogin.value).subscribe({
-      next: (response) => this.toastr.success('Login successful!'),
-      error: (error) => this.toastr.error('Login failed!')
+      next: () => this.toastr.success('Login successful!'),
+      error: () => this.toastr.error('Login failed!')
    })
 
   }
