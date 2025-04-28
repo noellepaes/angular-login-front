@@ -21,10 +21,10 @@ type InputTypes =
 
 
 export class PrimaryInputComponent implements ControlValueAccessor {
+  @Input() inputName: string = '';
   @Input() label: string = '';
   @Input() placeholder: string = '';
   @Input() type: InputTypes = 'text';
-  @Input() inputName: string = '';
 
   value: string = '';
   onChange: any = () => {};

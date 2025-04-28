@@ -1,0 +1,36 @@
+<app-defaut-login-layout
+  [title]="'Welcome !'"
+  [primaryButtonText]="'Signup now'"
+  (submit)="submit()"
+  (navigate)="navigate()"
+  [desablePrimaryBtn]="!signupForm.valid"
+
+  >
+
+  <form [formGroup]="signupForm">
+    <app-primary-input
+      type="text"
+      formControlName="name"
+      placeholder="Your Name"
+      class="Fernanda Kipper" />
+
+      <app-primary-input
+      type="email"
+      formControlName="email"
+      placeholder="YourEmail@gmail.com"
+      class="input-field" />
+
+    <app-primary-input
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+      class="input-field" />
+
+    <app-primary-input
+      type="password"
+      formControlName="passwordConfirm"
+      placeholder="Confirm your password"
+      class="input-field" />
+  </form>
+
+</app-defaut-login-layout>

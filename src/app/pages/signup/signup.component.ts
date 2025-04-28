@@ -1,4 +1,4 @@
-import { LoginService } from './../../service/login.service';
+import { LoginService } from '../../service/login.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DefautLoginLayoutComponent } from '../../components/defaut-login-layout/defaut-login-layout.component';
@@ -8,9 +8,15 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { inject } from '@angular/core';
 
+interface SignupForm {
+  name: string;
+  email: string;
+  password: string;
+  passwordConfirm: string;
+}
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-signup',
   imports: [
     DefautLoginLayoutComponent,
     CommonModule,
@@ -20,11 +26,11 @@ import { inject } from '@angular/core';
 providers: [
   LoginService
 ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.scss'
 })
-export class LoginComponent {
-  formLogin!: FormGroup;
+export class SignupComponent {
+  signupForm!: FormGroup;
   private readonly toastr = inject(ToastrService);
 
   constructor(
@@ -34,14 +40,16 @@ export class LoginComponent {
 
 
   ){
-    this.formLogin = new FormGroup({
+    this.signupForm = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
 
   submit() {
-   this.LoginService.login(this.formLogin.value.email, this.formLogin.value).subscribe({
+   this.LoginService.login(this.signupForm.value.email, this.signupForm.value).subscribe({
       next: () => this.toastr.success('Login successful!'),
       error: () => this.toastr.error('Login failed!')
    })
@@ -49,6 +57,6 @@ export class LoginComponent {
   }
 
   navigate() {
-    this.router.navigate(['/signup']);
+    this.router.navigate(['']);
   }
 }
