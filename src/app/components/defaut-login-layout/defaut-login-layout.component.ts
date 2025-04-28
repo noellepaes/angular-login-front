@@ -16,6 +16,7 @@ export class DefautLoginLayoutComponent {
   @Input() title: string = '';
   @Input() primaryButtonText: string = '';
   @Output("submit") onSubmit = new EventEmitter();
+  @Output("navigate") onNavigate = new EventEmitter();
 
   constructor(private readonly router: Router) {}
 
@@ -23,7 +24,9 @@ export class DefautLoginLayoutComponent {
     this.onSubmit.emit();
   }
 
-  onRegister() {
-    this.router.navigate(['/signup']);
+  navigate() {
+    this.onNavigate.emit();
   }
+
+  
 }

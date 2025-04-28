@@ -11,6 +11,6 @@ ng serve
 
 npm install -g @angular/cli
 
-npm install @angular/animations
-```
-npm i ngx-toastr
+npm install ngx-toastr --save
+
+npm install @angular/animations --save

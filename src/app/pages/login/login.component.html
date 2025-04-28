@@ -1,7 +1,10 @@
 <app-defaut-login-layout
   [title]="'Bem-vinda de volta!'"
   [primaryButtonText]="'Login'"
-  (submit)="submit()">
+  (submit)="submit()"
+  (navigate)="navigate()"
+
+  >
 
   <form [formGroup]="formLogin">
     <app-primary-input
