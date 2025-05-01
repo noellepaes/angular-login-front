@@ -41,7 +41,7 @@ export class LoginComponent {
   }
 
   submit() {
-   this.LoginService.login(this.formLogin.value.email, this.formLogin.value).subscribe({
+   this.LoginService.login(this.formLogin.value.email, this.formLogin.value.password).subscribe({
       next: () => this.toastr.success('Login successful!'),
       error: () => this.toastr.error('Login failed!')
    })
