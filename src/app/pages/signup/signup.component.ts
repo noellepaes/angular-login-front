@@ -49,7 +49,7 @@ export class SignupComponent {
   }
 
   submit() {
-   this.LoginService.login(this.signupForm.value.email, this.signupForm.value).subscribe({
+   this.LoginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
       next: () => this.toastr.success('Login successful!'),
       error: () => this.toastr.error('Login failed!')
    })
@@ -57,6 +57,6 @@ export class SignupComponent {
   }
 
   navigate() {
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
   }
 }
